@@ -1,0 +1,36 @@
+# Routes Config
+#
+# This file defines all application routes (Higher priority routes first)
+#
+
+module:testrunner
+# module:jobs
+
+
+GET     /                                       App.Index
+
+
+# User request section
+GET     /users                                  UserController.Index
+GET     /users/:id                              UserController.Show
+POST    /users/create                           UserController.Create
+PUT     /users/update                           UserController.Update
+DELETE  /users/delete/:id                       UserController.Delete
+
+
+# Friend request section
+GET     /friends/:id                            FriendController.Show
+GET     /friends/:username1/:username2          FriendController.ShowFriendShip
+POST    /friends/request                        FriendController.SendRequest
+PUT     /friends/request/accept                 FriendController.AcceptFriendRequest
+DELETE  /friends/request/delete/:id             FriendController.DeleteRequest
+
+
+# Post request section
+GET     /posts                                  PostController.Index
+GET     /posts/:id                              PostController.Show
+GET     /posts/user/:username                   PostController.ShowUserPosts
+POST    /posts/create                           PostController.Create
+PUT     /posts/update                           PostController.Update
+DELETE  /posts/delete/:id                       PostController.Delete
+
